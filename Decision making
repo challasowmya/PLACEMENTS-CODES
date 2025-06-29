@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[] hours = new int[7];
+        for (int i = 0; i < 7; i++) {
+            hours[i] = sc.nextInt();
+        }
+
+        int totalSalary = 0;
+
+        for (int i = 0; i < 7; i++) {
+            int dayHours = hours[i];
+            int dailyPay = 0;
+
+            // Calculate base pay
+            if (dayHours > 8) {
+                dailyPay = (8 * 100) + ((dayHours - 8) * (100 + 15));
+            } else {
+                dailyPay = dayHours * 100;
+            }
+
+            // Apply weekend bonuses
+            if (i == 0) { // Sunday
+                dailyPay += dailyPay * 0.5;
+            } else if (i == 6) { // Saturday
+                dailyPay += dailyPay * 0.25;
+            }
+
+            totalSalary += dailyPay;
+        }
+
+        System.out.println(totalSalary);
+    }
+}
