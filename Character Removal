@@ -1,0 +1,12 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a snct: ");
+        String snct = sc.nextLine();
+        System.out.print("Enter a char to remove: ");
+        char ch = sc.next().charAt(0);
+        String r = snct.replace(Character.toString(ch), "");
+        System.out.println("Output: " + r);
+    }
+}
