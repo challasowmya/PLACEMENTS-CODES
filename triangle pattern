@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int row ,space , star; 
+		for(row = n ; row>=1; row--) // lower 
+	{
+	    for(space=1 ;space <=n-row ; space++)
+	        	System.out.print(" ");
+	        	
+	    for(star = 1 ;star <= 2*row-1 ; star++)
+	        	System.out.print("*");
+		System.out.println();
+	}
+	for(row = 1 ; row<= n ; row++)  // upper
+	{
+	    for(space=1 ;space <=n-row ; space++)
+	        	System.out.print(" ");
+	        	
+	    for(star = 1 ;star <= 2*row-1 ; star++)
+	        	System.out.print("*");
+		System.out.println();
+	}
+	
+	
+	
+	}
+}
